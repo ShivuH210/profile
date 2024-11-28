@@ -7,13 +7,13 @@ import HeroBgAnimation from "../HeroBgAnimation";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import {
-  headContainerAnimation,
-  headContentAnimation,
-  headTextAnimation,
+    headContainerAnimation,
+    headContentAnimation,
+    headTextAnimation,
 } from "../../utils/motion";
 import StarCanvas from "../canvas/Stars";
 
-const HeroContainer = styled.div`
+const HeroContainer = styled.div `
   display: flex;
   justify-content: center;
   position: relative;
@@ -30,7 +30,7 @@ const HeroContainer = styled.div`
 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
-const HeroInnerContainer = styled.div`
+const HeroInnerContainer = styled.div `
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -42,7 +42,7 @@ const HeroInnerContainer = styled.div`
     flex-direction: column;
   }
 `;
-const HeroLeftContainer = styled.div`
+const HeroLeftContainer = styled.div `
   width: 100%;
   order: 1;
   @media (max-width: 960px) {
@@ -54,7 +54,7 @@ const HeroLeftContainer = styled.div`
     align-items: center;
   }
 `;
-const HeroRightContainer = styled.div`
+const HeroRightContainer = styled.div `
   width: 100%;
   order: 2;
   display: flex;
@@ -73,7 +73,7 @@ const HeroRightContainer = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Title = styled.div `
   font-weight: 700;
   font-size: 50px;
   color: ${({ theme }) => theme.text_primary};
@@ -90,7 +90,7 @@ const Title = styled.div`
   }
 `;
 
-const TextLoop = styled.div`
+const TextLoop = styled.div `
   font-weight: 600;
   font-size: 32px;
   display: flex;
@@ -109,12 +109,12 @@ const TextLoop = styled.div`
   }
 `;
 
-const Span = styled.div`
+const Span = styled.div `
   cursor: pointer;
   color: ${({ theme }) => theme.primary};
 `;
 
-const SubTitle = styled.div`
+const SubTitle = styled.div `
   font-size: 20px;
   line-height: 32px;
   margin-bottom: 42px;
@@ -130,7 +130,7 @@ const SubTitle = styled.div`
   }
 `;
 
-const ResumeButton = styled.a`
+const ResumeButton = styled.a `
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
@@ -177,7 +177,7 @@ const ResumeButton = styled.a`
     color: white;
 `;
 
-const Img = styled.img`
+const Img = styled.img `
   border-radius: 50%;
   width: 100%;
   height: 100%;
@@ -191,7 +191,7 @@ const Img = styled.img`
   }
 `;
 
-const HeroBg = styled.div`
+const HeroBg = styled.div `
   position: absolute;
   display: flex;
   justify-content: end;
@@ -216,55 +216,72 @@ const HeroBg = styled.div`
 `;
 
 const Hero = () => {
-  return (
-    <div id="About">
-      <HeroContainer>
-        <HeroBg>
-          <StarCanvas />
-          <HeroBgAnimation />
-        </HeroBg>
+    return ( <
+        div id = "About" >
+        <
+        HeroContainer >
+        <
+        HeroBg >
+        <
+        StarCanvas / >
+        <
+        HeroBgAnimation / >
+        <
+        /HeroBg>
 
-        <motion.div {...headContainerAnimation}>
-          <HeroInnerContainer>
-            <HeroLeftContainer>
-              <motion.div {...headTextAnimation}>
-                <Title>
-                  Hi, I am <br /> {Bio.name}
-                </Title>
-                <TextLoop>
-                  I am a
-                  <Span>
-                    <Typewriter
-                      options={{
-                        strings: Bio.roles,
-                        autoStart: true,
-                        loop: true,
-                      }}
-                    />
-                  </Span>
-                </TextLoop>
-              </motion.div>
+        <
+        motion.div {...headContainerAnimation } >
+        <
+        HeroInnerContainer >
+        <
+        HeroLeftContainer >
+        <
+        motion.div {...headTextAnimation } >
+        <
+        Title >
+        Hi, I am Shiv < br / >
+        <
+        /Title> <
+        TextLoop >
+        I am a <
+        Span >
+        <
+        Typewriter options = {
+            {
+                strings: Bio.roles,
+                autoStart: true,
+                loop: true,
+            }
+        }
+        /> < /
+        Span > <
+        /TextLoop> < /
+        motion.div >
 
-              <motion.div {...headContentAnimation}>
-                <SubTitle>{Bio.description}</SubTitle>
-              </motion.div>
+        <
+        motion.div {...headContentAnimation } >
+        <
+        SubTitle > { Bio.description } < /SubTitle> < /
+        motion.div >
 
-              <ResumeButton href={Bio.resume} target="_blank">
-                Check Resume
-              </ResumeButton>
-            </HeroLeftContainer>
-            <HeroRightContainer>
-              <motion.div {...headContentAnimation}>
-                <Tilt>
-                  <Img src={HeroImg} alt="Rishav Chanda" />
-                </Tilt>
-              </motion.div>
-            </HeroRightContainer>
-          </HeroInnerContainer>
-        </motion.div>
-      </HeroContainer>
-    </div>
-  );
+        <
+        ResumeButton href = { Bio.resume }
+        target = "_blank" >
+        Check Resume <
+        /ResumeButton> < /
+        HeroLeftContainer > <
+        HeroRightContainer >
+        <
+        motion.div {...headContentAnimation } >
+        <
+        /
+        motion.div > <
+        /HeroRightContainer> < /
+        HeroInnerContainer > <
+        /motion.div> < /
+        HeroContainer > <
+        /div>
+    );
 };
 
 export default Hero;
